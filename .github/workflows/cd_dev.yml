@@ -20,7 +20,8 @@ jobs:
 
       - name: Deploy over SSH
         run: |
-          ssh -i ~/ssh_key root@54.159.50.9 -o StrictHostKeyChecking=yes << 'EOF'
+          ssh -i ~/ssh_key ubuntu@54.159.50.9 -o StrictHostKeyChecking=yes << 'EOF'
+            sudo -i
             cd playing-with-prisma/
             git pull origin main
 
