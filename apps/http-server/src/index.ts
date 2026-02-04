@@ -8,6 +8,12 @@ app.get("/", (req, res) => {
     res.send("Hi there")
 })
 
+app.get("/user", async (req, res) => {
+    const user = await client.user.findFirst();
+
+    res.json(user);
+})
+
 app.post("/signup", async (req, res) =>{
     const email = req.body.email;
     const password = req.body.password;

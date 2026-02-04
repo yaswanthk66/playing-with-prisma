@@ -1,14 +1,13 @@
-import { client } from "@repo/db/client";
-
 export default async function Home() {
-  const user = await client.user.findFirst();
+  const res = await fetch("http://localhost:3002/user", {
+    cache: "no-store",
+  });
+
+  const user = await res.json();
 
   return (
     <div>
-      First name haha: 
-      {user?.email}
-      password: 
-      {user?.password}
+      email: {user?.email}
     </div>
   );
 }
