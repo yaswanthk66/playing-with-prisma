@@ -8,6 +8,7 @@ export default async function Home() {
   return (
     <div>
       email: {user?.email}
+      password: {user?.password}
     </div>
   );
 }
